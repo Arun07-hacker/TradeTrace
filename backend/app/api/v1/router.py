@@ -1,5 +1,5 @@
 from fastapi import APIRouter
-from app.api.v1 import health, auth, market, technical, news, risk, memory, analysis, trades, portfolio, monitoring, autopsy
+from app.api.v1 import health, auth, market, technical, news, risk, memory, analysis, trades, portfolio, monitoring, autopsy, tools
 
 api_router = APIRouter()
 api_router.include_router(health.router)
@@ -14,6 +14,8 @@ api_router.include_router(trades.router)
 api_router.include_router(portfolio.router)
 api_router.include_router(monitoring.router)
 api_router.include_router(autopsy.router)
+api_router.include_router(tools.router)
+
 
 
 

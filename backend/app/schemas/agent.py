@@ -57,4 +57,7 @@ class TradeAnalysisResponse(BaseModel):
     devils_advocate: DevilsAdvocateOutput
     risk: RiskCalculationResponse
     decision: DecisionAgentOutput
+    execution_trace: Optional[List[Dict[str, Any]]] = Field(
+        None, description="Ordered execution trace of tool and agent steps"
+    )
     created_at: datetime = Field(default_factory=datetime.utcnow)
